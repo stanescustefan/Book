@@ -3,26 +3,29 @@ from .models import Order
 
 class OrderCreateForm(forms.ModelForm):
 	DIVISION_CHOICES = (
-		('Dhaka', 'Dhaka'),
-		('Chattagram', 'Chattagram'),
-		('Rajshahi', 'Rajshahi '),
+		('Arad', 'Arad'),
+		('Bacau', 'Bacau'),
+		('Bucuresti', 'Bucuresti'),
+		('Cluj', 'Cluj'),
+		('Iasi', 'Iasi'),
 	)
 
 	DISCRICT_CHOICES = (
-		('Dhaka', 'Dhaka'), 
-		('Gazipur', 'Gazipur'),
-		('Narayanganj', 'Narayanganj'),
+		('Arad', 'Arad'),
+		('Bacau', 'Bacau'),
+		('Bucuresti', 'Bucuresti'),
+		('Cluj', 'Cluj'),
+		('Iasi', 'Iasi'),
 	)
 
-	PAYMENT_METHOD_CHOICES = (
-		('Rocket', 'Rocket'),
-		('Bkash','Bkash')
-	)
+	# PAYMENT_METHOD_CHOICES = (
+	# 	('Card', 'Card'),
+	# 	('PayPal', 'PayPal')
+	# )
 
-	division = forms.ChoiceField(choices=DIVISION_CHOICES)
-	district =  forms.ChoiceField(choices=DISCRICT_CHOICES)
-	payment_method = forms.ChoiceField(choices=PAYMENT_METHOD_CHOICES, widget=forms.RadioSelect())
+	country = forms.ChoiceField(choices=DIVISION_CHOICES)
+	# payment_method = forms.ChoiceField(choices=PAYMENT_METHOD_CHOICES, widget=forms.RadioSelect())
 
 	class Meta:
 		model = Order
-		fields = ['name', 'email', 'phone', 'address', 'division', 'district', 'zip_code', 'payment_method', 'account_no', 'transaction_id']
+		fields = ['name', 'email', 'phone', 'address', 'country', 'zip_code','card_no']

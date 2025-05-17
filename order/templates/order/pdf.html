@@ -2,7 +2,7 @@
 <html>
 <head>
 	<title>Book Store Sign In</title>
-	{% load staticfiles %}
+	{% load static %}
 	<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
 	<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
 	<link rel="stylesheet" type="text/css" href="{% static 'css/font-awesome.min.css' %}">
@@ -17,9 +17,8 @@
 		                <h1>Name: {{ order.name }}</h1>
 		                <h1>Phone: {{ order.phone }}</h1>
 		                <h1>Email: {{ order.email }}</h1>
-		                <h1>Account No: {{ order.account_no }}</h1>
-		                <h1>Payment Method: {{ order.payment_method }}</h1>
-		                <h1>Shipping address: {{ order.division }}:{{ order.zip_code }}, {{ order.district }}, {{ order.address }}</h1>
+		                <h1>Card No: {{ order.card_no }}</h1>
+		                <h1>Shipping address: {{ order.country }}:{{ order.zip_code }}, {{ order.address }}</h1>
 		        </div>
 	        </div>
 		</div>
